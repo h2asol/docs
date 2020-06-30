@@ -1,0 +1,91 @@
+# REGISTRO C100
+
+## NOTA FISCAL (CÓDIGO 01), NOTA FISCAL AVULSA (CÓDIGO 1B), NOTA FISCAL DE PRODUTOR (CÓDIGO 04), NF-e (CÓDIGO 55) e NFC-e (CÓDIGO 65).
+
+_Versão 3.0.3 - v3_
+_Atualização: 14 de outubro de 2019_
+
+Este registro deve ser gerado para cada documento fiscal código 01, 1B, 04, 55 e 65 (saída), conforme item 4.1.1 da Nota Técnica (Ato COTEPE/ICMS nº 44/2018 e alterações), registrando a entrada ou saída de produtos ou outras situações
+que envolvam a emissão dos documentos fiscais mencionados. As NFC-e (código 65) não devem ser escrituradas nas
+entradas.
+
+A partir do mês de referência abril de 2012, a informação do campo CHV_NFE passa a ser obrigatória em todas as
+situações, exceto para NF-e com numeração inutilizada (COD_SIT = 05).
+
+*IMPORTANTE:* para documentos de entrada, os campos de valor de imposto, base de cálculo e alíquota só devem ser
+informados se o adquirente tiver direito à apropriação do crédito (enfoque do declarante).
+Para cada registro C100, obrigatoriamente deve ser apresentado, pelo menos, um registro C170 e um registro C190,
+observadas as exceções abaixo relacionadas:
+
+* Exceção 1: Para documentos com código de situação (campo COD_SIT) cancelado (código “02”), cancelado extemporâneo
+(código “03”), Nota Fiscal Eletrônica (NF-e) denegada (código “04”), preencher somente os campos REG, IND_OPER,
+IND_EMIT, COD_MOD, COD_SIT, SER, NUM_DOC e CHV_NF-e. Para COD-SIT = 05 (numeração inutilizada), todos os
+campos referidos anteriormente devem ser preenchidos, exceto o campo CHV_NF-e. Demais campos deverão ser
+apresentados com conteúdo VAZIO “||”. Não informar registros filhos. A partir de janeiro de 2011, no caso de NF-e de
+emissão própria com código de situação (campo COD_SIT) cancelado (código “02”) e cancelado extemporâneo (código
+“03”) deverão ser informados os campos acima citados incluindo ainda a chave da NF-e.
+* Exceção 2: Notas Fiscais Eletrônicas - NF-e de emissão própria: regra geral, devem ser apresentados somente os registros
+C100 e C190, e, se existirem ajustes de documento fiscais determinados por legislação estadual (tabela 5.3 da Nota Técnica,
+instituída pelo Ato COTEPE/ICMS nº 44/2018 e alterações), devem ser apresentados também os registros C195 e
+C197;somente será admitida a informação do registro C170 quando também houver sido informado o registro C176, C180
+ou o Registro C177 (no caso de haver informações complementares do item, a partir de 01/01/2019 - Tabela 5.6). A critério
+de cada UF, informar os registros C110 e C120, a partir de julho de 2012. O registro C101 deverá ser informado, a partir de
+janeiro/2016, nas operações interestaduais que destinem bens e serviços a consumidor final não contribuinte do ICMS,
+conforme EC 87/15. A partir de janeiro de 2020, também poderá ser informado o Registro C185, a critério de cada UF.
+* Exceção 3: Notas Fiscais Complementares e Notas Fiscais Complementares escrituradas extemporaneamente (campo
+COD_SIT igual a “06” ou “07”): nesta situação, somente os campos REG, IND_EMIT, COD_PART, COD_MOD,
+COD_SIT, NUM_DOC, CHV_NFE e DT_DOC são de preenchimento obrigatório, devendo ser preenchida a data de efetiva
+saída, para os contribuintes das UF que utilizam a data de saída para a apuração. Os demais campos são facultativos (se forem
+preenchidos, inclusive com valores iguais a zero, serão validadas e aplicadas as regras de campos existentes). O registro C190
+é sempre obrigatório e deve ser preenchido. Os demais campos e registros filhos do registro C100 serão informados, quando
+houver informação a ser prestada. Se for informado o registro C170 o campo NUM_ITEM deve ser preenchido.
+* Exceção 4: Notas Fiscais emitidas por regime especial ou norma específica (campo COD_SIT igual a “08”). Para
+documentos fiscais emitidos com base em regime especial ou norma específica, deverão ser apresentados os registros C100 e
+C190, obrigatoriamente, e os demais registros “filhos”, se estes forem exigidos pela legislação fiscal. Nesta situação, para o
+registro C100, somente os campos REG, IND_OPER, IND_EMIT, COD_PART, COD_MOD, COD_SIT, NUM_DOC e
+DT_DOC são de preenchimento obrigatório. A partir do mês de referência abril de 2012 a informação do campo CHV_NFE
+passa a ser obrigatória neste caso para modelo 55. Os demais campos, com exceção do campo NUM_ITEM do registro C170,
+são facultativos (se forem preenchidos, inclusive com valores iguais a Zero, serão validados e aplicadas as regras de campos
+existentes) e deverão ser preenchidos, quando houver informação a ser prestada. Exemplos: a) Nota fiscal emitida em
+substituição ao cupom fiscal – CFOP igual a 5.929 ou 6.929 – (lançamento efetuado em decorrência de emissão de
+documento fiscal relativo à operação ou à prestação também registrada em equipamento Emissor de Cupom Fiscal – ECF,
+exceto para o contribuinte do Estado do Paraná, que deve efetuar a escrituração de acordo com a regra estabelecida na tabela
+de código de ajustes e para outras UF onde a regulamentação seja diferente); b) Nos casos em que a legislação estadual
+permitir a emissão de NF sem informações do destinatário, preencher os dados do próprio emitente. Obs.: a partir de janeiro
+de 2012, para todos os documentos não eletrônicos e com COD_SIT igual a “08”, deverá ser informada no registro C110 a
+norma legal que autoriza o preenchimento do documento fiscal nessa situação.
+* Exceção 5: Para os documentos fiscais emitidos de acordo com o estabelecido em regimes especiais ou normas específicas,
+devidamente autorizados pelo fisco (campo COD_SIT igual a “08”), será permitida a informação de data de emissão de
+documento maior que a data de entrada ou saída. Ex. aquisição de cana-de-açúcar, venda de derivados de petróleo, etc. Será
+emitida Advertência pelo PVA-EFD-ICMS/IPI.
+* Exceção 6: Venda de produtos que geram direito a ressarcimento com utilização de NF-e: Nos casos de vendas, para outro
+estado, de produtos tributados por ST na operação anterior o contribuinte deverá indicar no registro C176 os dados para
+futura solicitação de ressarcimento. O registro C170 deverá ser preenchido apenas com os itens da NF que gerem direito ao
+pedido de ressarcimento, devendo também ser preenchido o registro C176 (utilização a partir de 01/06/2009). A UF
+determinará a obrigatoriedade deste registro.
+* Exceção 7: Escrituração de documentos emitidos por terceiros: os casos de escrituração de documentos fiscais, inclusive
+NF-e e NFC-e, emitidos por terceiros (como por ex. o consórcio constituído nos termos do disposto nos arts. 278 e 279 da Lei
+nº 6.404, de 15 de dezembro de 1976) e das NF-e “avulsas” emitidas pelas UF (séries 890 a 899) devem ser informados como
+emissão de terceiros, com o código de situação do documento igual a “08 - Documento Fiscal emitido com base em Regime
+Especial ou Norma Específica”. O PVA-EFD-ICMS/IPI exibirá a mensagem de Advertência para esses documentos. Obs: Os
+documentos fiscais emitidos pelas filiais das empresas que possuam inscrição estadual única ou sejam autorizadas pelos
+fiscos estaduais a centralizar suas escriturações fiscais deverão ser informados como sendo de emissão própria e código de
+situação igual a “00 – Documento regular”.Excepcionalmente, até junho de 2012, poderão ser informados como sendo de
+emissão de terceiros e código de situação de documento como sendo “08”.
+* Exceção 8: NF-e com o campo UF de consumo preenchido: nos casos de NF-e de emissão própria, quando o campo UF de
+consumo for preenchido (onde a UF de consumo é diversa da UF do destinatário), deve ser informado no registro C105.
+* Exceção 9: Notas fiscais eletrônicas ao consumidor final - NFC-e (modelo 65): via de regra, devem ser apresentados
+somente os registros C100 e C190 e, se existirem ajustes de documento fiscais determinados por legislação estadual (tabela
+5.3 da Nota Técnica, instituída pelo Ato COTEPE/ICMS nº 44/2018 e alterações), devem ser apresentados também os
+registros C195 e C197. No registro C100, não devem ser informados os campos COD_PART, VL_BC_ICMS_ST,
+VL_ICMS_ST, VL_IPI, VL_PIS, VL_COFINS, VL_PIS_ST e VL_COFINS_ST. Os demais campos seguirão a
+obrigatoriedade definida pelo registro. As NFC-e não devem ser escrituradas nas entradas. A partir de janeiro de 2020,
+também poderá ser informado o Registro C185, a critério de cada UF.
+* Exceção 10: nos casos em que houver informações complementares do item (tabela 5.6 da Nota Técnica, instituída pelo Ato
+COTEPE/ICMS nº 44/2018 e alterações) a serem prestadas no Registro C177 (utilização a partir de 01/01/2019), o registro
+C170 deverá ser informado, inclusive para NF-e de emissão própria. A UF determinará a obrigatoriedade deste registro.
+Validação do Registro: Não podem ser informados, para um mesmo documento fiscal, dois ou mais registros com a mesma
+combinação de valores dos campos formadores da chave do registro. A chave deste registro é:
+ * para documentos com campo IND_EMIT igual a “1-Terceiros”: campo IND_OPER, campo IND_EMIT, campo COD_PART, campo COD_MOD, campo COD_SIT, campo SER, campo NUM_DOC e campo CHV_NFE;
+ * para documentos com campo (IND_EMIT igual “0-Emissão Própria”: campo IND_OPER, campo IND_EMIT, campo COD_MOD, campo COD_SIT, campo SER, campo NUM_DOC e campo CHV_NFE.
+ 
