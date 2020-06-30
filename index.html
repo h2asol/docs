@@ -50,7 +50,12 @@
         EditOnGithubPlugin.create('https://github.com/h2asol/docs/blob/master/')
       ],
       search: {
-        paths: 'auto',
+        paths: [
+          '/',
+          '/sped-fiscal',
+          '/sped-fiscal/c',
+          '/sped-fiscal/c/c100'
+        ],
         placeholder: 'Pesquisar',
         noData: 'Nada encontrado!',
         depth: 6,
