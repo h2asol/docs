@@ -1,5 +1,5 @@
 <!-- _coverpage.md -->
 
-# docs
+# docs(/#)
 
 > Um site de documentação aberta
