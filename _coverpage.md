@@ -2,13 +2,13 @@
 
 ![logo](_media/icon.svg)-->
 
-# docsify <small>3.5</small>
+# docs <small>1.0</small>
 
-> A magical documentation site generator.
+> Um site de documentação aberta
 
-- Simple and lightweight (~21kB gzipped)
-- No statically built html files
-- Multiple themes
+- Arquivos abertos
+- Atualizado por todos
+- Simples, leve e direto
 
-[GitHub](https://github.com/docsifyjs/docsify/)
-[Get Started](#docsify)
+[GitHub](https://h2asol.github.com/docs)
+[Iniciar](#)
