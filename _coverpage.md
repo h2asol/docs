@@ -1,8 +1,8 @@
 <!-- _coverpage.md -->
 
-**DOCS**
+> DOCS
 
-> Um site de documentação aberta
+**Um site de documentação aberta**
 
  - Leve
  - Simples
