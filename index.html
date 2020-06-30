@@ -47,20 +47,25 @@
       ga: 'UA-29418083-2',
       disqus: 'shortname',
       plugins: [
-        EditOnGithubPlugin.create('https://github.com/h2asol/docs/blob/master/')
+        EditOnGithubPlugin.create('https://github.com/h2asol/docs/tree/master/'
+                  null,
+                  '📝 Editar'
+              )
       ],
+      repo: 'https://github.com/SAP/openui5-docs',
       search: {
-        paths: [
-          '/',
-          '/sped-fiscal',
-          '/sped-fiscal/c',
-          '/sped-fiscal/c/c100'
-        ],
-        placeholder: 'Pesquisar',
-        noData: 'Nada encontrado!',
-        depth: 6,
-        hideOtherSidebarContent: false
-      }
+              noData: {
+                  '/': 'Sem resultados!'
+              },
+              paths: 'auto',
+              placeholder: {
+                  '/': 'Pesquisar'
+              },
+      },
+      formatUpdated: '{DD}.{MM}.{YYYY} {HH}:{mm}',
+      markdown: {
+          smartypants: true
+      },
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
