@@ -16,7 +16,11 @@
       name: 'docs',
       el: '#app',
       loadSidebar: true,
-      subMaxLevel: 2,
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      }
+      maxLevel: 6,
+      subMaxLevel: 6,
       loadNavbar: true,
       mergeNavbar: true,
       coverpage: true,
