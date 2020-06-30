@@ -7,30 +7,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta charset="UTF-8">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
 </head>
 <body>
   <div id="app"></div>
-  
-  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/disqus.min.js"></script>
-
-  
-  <!-- Gitalk Config -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
-  <script>
-  const gitalk = new Gitalk({
-    clientID: 'Github Application Client ID',
-    clientSecret: 'Github Application Client Secret',
-    repo: 'Github repo',
-    owner: 'Github repo owner',
-    admin: ['Github repo collaborators, only these guys can initialize github issues'],
-    // facebook-like distraction free mode
-    distractionFreeMode: false
-  })
-</script>
   
   <script>
     window.$docsify = {
@@ -41,11 +20,9 @@
       loadNavbar: true,
       mergeNavbar: true,
       coverpage: true,
-      onlyCover: false,
+      onlyCover: true,
       repo: 'https://github.com/h2asol/docs/',
       auto2top: true,
-      ga: 'UA-29418083-2',
-      disqus: 'shortname',
       plugins: [
         EditOnGithubPlugin.create('https://github.com/h2asol/docs/tree/master/',
                   null,
@@ -68,8 +45,10 @@
       }
     }
   </script>
+  
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script>
+  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
+  
 </body>
 </html>
