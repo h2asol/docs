@@ -12,8 +12,6 @@
 <body>
   <div id="app"></div>
   
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script>
   <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
@@ -52,45 +50,11 @@
       plugins: [
         EditOnGithubPlugin.create('https://github.com/h2asol/docs/blob/master/')
       ],
-      search: 'auto', // default
-
-    search : [
-      '/',            // => /README.md
-      '/guide',       // => /guide.md
-      '/get-started', // => /get-started.md
-      '/zh-cn/',      // => /zh-cn/README.md
-    ],
-       // complete configuration parameters
-    search: {
-      maxAge: 86400000, // Expiration time, the default one day
-      paths: [], // or 'auto'
-      placeholder: 'Type to search',
-
-      // Localization
-      placeholder: {
-        '/zh-cn/': '搜索',
-        '/': 'Type to search'
-      },
-
-      noData: 'No Results!',
-
-      // Localization
-      noData: {
-        '/zh-cn/': '找不到结果',
-        '/': 'No Results'
-      },
-
-      // Headline depth, 1 - 6
-      depth: 2,
-
-      hideOtherSidebarContent: false, // whether or not to hide other sidebar content
-
-      // To avoid search index collision
-      // between multiple websites under the same domain
-      namespace: 'website-1',
-    }
+      search: 'auto' // default
     }
   </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 
     
   
