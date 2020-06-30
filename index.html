@@ -12,7 +12,6 @@
 <body>
   <div id="app"></div>
   
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script>
   <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/disqus.min.js"></script>
@@ -50,11 +49,18 @@
       plugins: [
         EditOnGithubPlugin.create('https://github.com/h2asol/docs/blob/master/')
       ],
-      search: 'auto' // default
+      search: {
+        paths: 'auto',
+        placeholder: 'Pesquisar',
+        noData: 'Nada encontrado!',
+        depth: 6,
+        hideOtherSidebarContent: false
+      }
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script>
 
     
   
